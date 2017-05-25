@@ -29,9 +29,11 @@
 - (void)prepareLayout
 {
     [super prepareLayout];
-    
+    self.itemAttributes = [[NSMutableArray alloc]init];
+    for (NSInteger indexSextion = 0 ; indexSextion < [[self collectionView] numberOfSections] ; indexSextion++) {
+        
+    }
     NSInteger itemCount = [[self collectionView] numberOfItemsInSection:0];
-    self.itemAttributes = [NSMutableArray arrayWithCapacity:itemCount];
     NSInteger equalIndex = 0;
     CGFloat xOffset = self.sectionInset.left;
     CGFloat yOffset = self.sectionInset.top;
