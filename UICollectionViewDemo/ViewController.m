@@ -7,11 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "EqualSpaceFlowLayout.h"
 #import "ItemData.h"
 #import "CustomCollectionViewCell.h"
-
-@interface ViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,EqualSpaceFlowLayoutDelegate>
+#import "HeaderCollectionReusableView.h"
+#import "EqualSpaceFlowLayoutEvolve.h"
+@interface ViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (nonatomic,strong) UICollectionView *collectionView;
 @property (nonatomic,strong) NSMutableArray *dataArray;
 @end
@@ -19,28 +19,27 @@
 @implementation ViewController
 - (void)addContentView
 {
-    EqualSpaceFlowLayout *flowLayout = [[EqualSpaceFlowLayout alloc] init];
-    flowLayout.delegate = self;
+    EqualSpaceFlowLayoutEvolve * flowLayout = [[EqualSpaceFlowLayoutEvolve alloc]initWthType:AlignWithCenter];
     
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 50, self.view.bounds.size.width, self.view.bounds.size.height - 100) collectionViewLayout:flowLayout];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) collectionViewLayout:flowLayout];
     self.collectionView.backgroundColor = [UIColor lightGrayColor];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     [self.view addSubview:self.collectionView];
     
+    [self.collectionView registerClass:[HeaderCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerIdentifier"];
     [self.collectionView registerClass:[CustomCollectionViewCell class] forCellWithReuseIdentifier:@"CellIdentifier"];
 }
 
 - (void)loadData
 {
     self.dataArray = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 500; i++) {
+    for (int i = 0; i < 100; i++) {
         NSInteger n = arc4random() % 10 + 1;
         ItemData *itemData = [[ItemData alloc] init];
         itemData.content = [NSString stringWithFormat:@"%d",i];
         itemData.size = CGSizeMake((n * 5) + 50,30);
         [self.dataArray addObject:itemData];
-        
     }
 }
 
@@ -61,13 +60,14 @@
 //定义展示的UICollectionViewCell的个数
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [self.dataArray count];
+    
+    return self.dataArray.count / 2;
 }
 
 //定义展示的Section的个数
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 1;
+    return 2;
 }
 
 //每个UICollectionView展示的内容
@@ -75,13 +75,23 @@
 {
     static NSString *moreCellIdentifier = @"CellIdentifier";
     CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:moreCellIdentifier forIndexPath:indexPath];
-    
-    ItemData *itemData = [self.dataArray objectAtIndex:[indexPath row]];
+    NSLog(@"%ld",indexPath.section);
+    ItemData *itemData = [self.dataArray objectAtIndex:[indexPath item]];
     cell.content = itemData.content;
-//    [cell.contentView setNeedsLayout];
     return cell;
 }
-
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    UICollectionReusableView *reusableview = nil;
+    if (kind == UICollectionElementKindSectionHeader){
+        HeaderCollectionReusableView * headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerIdentifier" forIndexPath:indexPath];
+        headerView.backgroundColor = [UIColor yellowColor];
+        reusableview = headerView;
+    }
+    return reusableview;
+}
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    return CGSizeMake(collectionView.frame.size.width, 40);
+}
 #pragma mark --UICollectionViewDelegateFlowLayout
 //定义每个UICollectionView 的大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
