@@ -17,6 +17,16 @@
 @end
 
 @implementation ViewController
+
+
+#pragma mark - lifeCycle methods
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+    [self loadData];
+    [self addContentView];
+//    [self performSelector:@selector(setSome) withObject:nil afterDelay:2];
+}
 - (void)addContentView
 {
     EqualSpaceFlowLayoutEvolve * flowLayout = [[EqualSpaceFlowLayoutEvolve alloc]initWthType:AlignWithCenter];
@@ -26,7 +36,6 @@
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     [self.view addSubview:self.collectionView];
-    
     [self.collectionView registerClass:[HeaderCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerIdentifier"];
     [self.collectionView registerClass:[CustomCollectionViewCell class] forCellWithReuseIdentifier:@"CellIdentifier"];
 }
@@ -42,15 +51,10 @@
         [self.dataArray addObject:itemData];
     }
 }
-
-#pragma mark - lifeCycle methods
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    [self loadData];
-    [self addContentView];
+-(void)setSome{
+    [self.dataArray removeAllObjects];
+    [self.collectionView reloadData];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
