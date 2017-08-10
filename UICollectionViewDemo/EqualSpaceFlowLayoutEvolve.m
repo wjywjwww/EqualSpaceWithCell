@@ -28,7 +28,10 @@
     }
     return self;
 }
-
+-(void)setBetweenOfCell:(CGFloat)betweenOfCell{
+    _betweenOfCell = betweenOfCell;
+    self.minimumInteritemSpacing = betweenOfCell;
+}
 -(instancetype)initWthType:(AlignType)cellType{
     self = [super init];
     if (self){
@@ -96,7 +99,7 @@
             [layoutAttributes removeAllObjects];
             break;
         case AlignWithCenter:
-            nowWidth = (self.collectionView.frame.size.width - _sumWidth - (layoutAttributes.count * _betweenOfCell)) / 2;
+            nowWidth = (self.collectionView.frame.size.width - _sumWidth - ((layoutAttributes.count - 1) * _betweenOfCell)) / 2;
             for (UICollectionViewLayoutAttributes * attributes in layoutAttributes) {
                 CGRect nowFrame = attributes.frame;
                 nowFrame.origin.x = nowWidth;
