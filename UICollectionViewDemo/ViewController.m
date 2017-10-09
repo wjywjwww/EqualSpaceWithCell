@@ -30,7 +30,7 @@
 - (void)addContentView
 {
     EqualSpaceFlowLayoutEvolve * flowLayout = [[EqualSpaceFlowLayoutEvolve alloc]initWthType:AlignWithCenter];
-    flowLayout.betweenOfCell = 50;
+    flowLayout.betweenOfCell = 5;
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) collectionViewLayout:flowLayout];
     self.collectionView.backgroundColor = [UIColor lightGrayColor];
     self.collectionView.delegate = self;
