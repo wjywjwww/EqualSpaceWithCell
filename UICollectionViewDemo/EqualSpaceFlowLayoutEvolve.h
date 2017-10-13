@@ -21,5 +21,7 @@ typedef NS_ENUM(NSInteger,AlignType){
 @property (nonatomic,assign)AlignType cellType;
 
 -(instancetype)initWthType : (AlignType)cellType;
+//全能初始化方法 其他方式初始化最终都会走到这里
+-(instancetype)initWithType:(AlignType) cellType betweenOfCell:(CGFloat)betweenOfCell;
 
 @end

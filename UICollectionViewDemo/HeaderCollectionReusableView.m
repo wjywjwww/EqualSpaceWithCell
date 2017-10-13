@@ -29,4 +29,7 @@
     }
     return self;
 }
+-(void)updateLabelFrame{
+    _label.frame = self.bounds;
+}
 @end

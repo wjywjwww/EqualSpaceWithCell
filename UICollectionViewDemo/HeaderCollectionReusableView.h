@@ -10,4 +10,5 @@
 
 @interface HeaderCollectionReusableView : UICollectionReusableView
 @property(nonatomic,retain)UILabel * label;
+-(void)updateLabelFrame;
 @end
