@@ -1,21 +1,19 @@
 //
-//  EqualSpaceFlowLayoutEvolve.m
+//  JYEqualCellSpaceFlowLayout.m
 //  UICollectionViewDemo
 //
-//  Created by sks on 17/5/26.
+//  Created by 飞迪1 on 2017/10/13.
 //  Copyright © 2017年 CHC. All rights reserved.
 //
 
-#import "EqualSpaceFlowLayoutEvolve.h"
-
-@interface EqualSpaceFlowLayoutEvolve(){
+#import "JYEqualCellSpaceFlowLayout.h"
+@interface JYEqualCellSpaceFlowLayout(){
     //在居中对齐的时候需要知道这行所有cell的宽度总和
     CGFloat _sumCellWidth ;
 }
 @end
 
-@implementation EqualSpaceFlowLayoutEvolve
-
+@implementation JYEqualCellSpaceFlowLayout
 -(instancetype)init{
     return [self initWithType:AlignWithCenter betweenOfCell:5.0];
 }

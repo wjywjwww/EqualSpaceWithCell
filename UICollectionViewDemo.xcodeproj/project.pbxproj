@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B779EC71EB081550045B73D /* HeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B779EC61EB081550045B73D /* HeaderCollectionReusableView.m */; };
-		1BBD23F71ED7C045005DA80D /* EqualSpaceFlowLayoutEvolve.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBD23F61ED7C045005DA80D /* EqualSpaceFlowLayoutEvolve.m */; };
+		8E8906881F909D4600F8543E /* JYEqualCellSpaceFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8906871F909D4600F8543E /* JYEqualCellSpaceFlowLayout.m */; };
 		EAEEE5181B01CEFF0041B643 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEEE5171B01CEFF0041B643 /* main.m */; };
 		EAEEE51B1B01CEFF0041B643 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEEE51A1B01CEFF0041B643 /* AppDelegate.m */; };
 		EAEEE51E1B01CEFF0041B643 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEEE51D1B01CEFF0041B643 /* ViewController.m */; };
@@ -34,8 +34,8 @@
 		1B779EC51EB081550045B73D /* HeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderCollectionReusableView.h; sourceTree = "<group>"; };
 		1B779EC61EB081550045B73D /* HeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderCollectionReusableView.m; sourceTree = "<group>"; };
 		1BBD23F21ED7C030005DA80D /* UICollectionViewDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewDemo-Bridging-Header.h"; sourceTree = "<group>"; };
-		1BBD23F51ED7C045005DA80D /* EqualSpaceFlowLayoutEvolve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EqualSpaceFlowLayoutEvolve.h; sourceTree = "<group>"; };
-		1BBD23F61ED7C045005DA80D /* EqualSpaceFlowLayoutEvolve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EqualSpaceFlowLayoutEvolve.m; sourceTree = "<group>"; };
+		8E8906861F909D4600F8543E /* JYEqualCellSpaceFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYEqualCellSpaceFlowLayout.h; sourceTree = "<group>"; };
+		8E8906871F909D4600F8543E /* JYEqualCellSpaceFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYEqualCellSpaceFlowLayout.m; sourceTree = "<group>"; };
 		EAEEE5121B01CEFF0041B643 /* UICollectionViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICollectionViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAEEE5161B01CEFF0041B643 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAEEE5171B01CEFF0041B643 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -102,8 +102,8 @@
 				EAEEE5421B01E4D40041B643 /* CustomCollectionViewCell.m */,
 				1B779EC51EB081550045B73D /* HeaderCollectionReusableView.h */,
 				1B779EC61EB081550045B73D /* HeaderCollectionReusableView.m */,
-				1BBD23F51ED7C045005DA80D /* EqualSpaceFlowLayoutEvolve.h */,
-				1BBD23F61ED7C045005DA80D /* EqualSpaceFlowLayoutEvolve.m */,
+				8E8906861F909D4600F8543E /* JYEqualCellSpaceFlowLayout.h */,
+				8E8906871F909D4600F8543E /* JYEqualCellSpaceFlowLayout.m */,
 				EAEEE51F1B01CEFF0041B643 /* Main.storyboard */,
 				EAEEE5221B01CEFF0041B643 /* Images.xcassets */,
 				EAEEE5241B01CEFF0041B643 /* LaunchScreen.xib */,
@@ -190,7 +190,7 @@
 				TargetAttributes = {
 					EAEEE5111B01CEFF0041B643 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = PD6H97QKA5;
+						DevelopmentTeam = X73QL9XNPM;
 						LastSwiftMigration = 0820;
 					};
 					EAEEE52A1B01CEFF0041B643 = {
@@ -245,8 +245,8 @@
 			files = (
 				EAEEE5401B01E2230041B643 /* ItemData.m in Sources */,
 				1B779EC71EB081550045B73D /* HeaderCollectionReusableView.m in Sources */,
-				1BBD23F71ED7C045005DA80D /* EqualSpaceFlowLayoutEvolve.m in Sources */,
 				EAEEE51E1B01CEFF0041B643 /* ViewController.m in Sources */,
+				8E8906881F909D4600F8543E /* JYEqualCellSpaceFlowLayout.m in Sources */,
 				EAEEE51B1B01CEFF0041B643 /* AppDelegate.m in Sources */,
 				EAEEE5431B01E4D40041B643 /* CustomCollectionViewCell.m in Sources */,
 				EAEEE5181B01CEFF0041B643 /* main.m in Sources */,
@@ -376,7 +376,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = PD6H97QKA5;
+				DEVELOPMENT_TEAM = X73QL9XNPM;
 				INFOPLIST_FILE = UICollectionViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -391,7 +391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = PD6H97QKA5;
+				DEVELOPMENT_TEAM = X73QL9XNPM;
 				INFOPLIST_FILE = UICollectionViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

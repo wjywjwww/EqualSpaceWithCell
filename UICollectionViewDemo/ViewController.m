@@ -10,7 +10,7 @@
 #import "ItemData.h"
 #import "CustomCollectionViewCell.h"
 #import "HeaderCollectionReusableView.h"
-#import "EqualSpaceFlowLayoutEvolve.h"
+#import "JYEqualCellSpaceFlowLayout.h"
 @interface ViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (nonatomic,strong) UICollectionView *collectionView;
 @property (nonatomic,strong) NSMutableArray *dataArray;
@@ -29,7 +29,7 @@
 }
 - (void)addContentView
 {
-    EqualSpaceFlowLayoutEvolve * flowLayout = [[EqualSpaceFlowLayoutEvolve alloc]initWithType:AlignWithCenter betweenOfCell:5.0];
+    JYEqualCellSpaceFlowLayout * flowLayout = [[JYEqualCellSpaceFlowLayout alloc]initWithType:AlignWithCenter betweenOfCell:5.0];
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) collectionViewLayout:flowLayout];
     self.collectionView.backgroundColor = [UIColor lightGrayColor];
     self.collectionView.delegate = self;
